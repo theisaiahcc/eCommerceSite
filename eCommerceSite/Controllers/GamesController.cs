@@ -67,5 +67,30 @@ namespace eCommerceSite.Controllers
             TempData["Message"] = game.Title + " updated successfully!";
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            Game? game = await _context.Games.FindAsync(id);
+            if (game != null)
+            {
+                return View(game);
+            }
+            return NotFound();
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            Game? game = await _context.Games.FindAsync(id);
+            if (game != null)
+            {
+                _context.Games.Remove(game);
+                await _context.SaveChangesAsync();
+                TempData["Message"] = game.Title + " deleted successfully!";
+                return RedirectToAction("Index");
+            }
+            TempData["ErrorMessage"] = "This game has already been deleted!";
+            return RedirectToAction("Index");
+        }
     }
 }
