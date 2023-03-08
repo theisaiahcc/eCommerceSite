@@ -64,6 +64,7 @@ namespace eCommerceSite.Controllers
                 _context.Games.Update(game);
                 await _context.SaveChangesAsync();
             }
+            TempData["Message"] = game.Title + " updated successfully!";
             return RedirectToAction("Index");
         }
     }
