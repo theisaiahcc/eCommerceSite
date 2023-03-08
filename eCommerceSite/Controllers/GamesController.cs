@@ -55,5 +55,16 @@ namespace eCommerceSite.Controllers
             }
             return NotFound();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Game game)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Games.Update(game);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
