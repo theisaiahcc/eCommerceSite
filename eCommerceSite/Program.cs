@@ -8,6 +8,12 @@ builder.Services.AddDbContext<GameContext>(options =>
      options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllersWithViews();
 
+// builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // allows session access in views
+builder.Services.AddHttpContextAccessor(); // allows session access in views
+// add session - part 1 of 2
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +30,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// add session - part 2 of 2
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

@@ -20,3 +20,13 @@ body {
 .btn-close {
     float: right;
 }
+
+.text-danger > ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.login {
+    float: right;
+    margin-bottom: 0;
+}
