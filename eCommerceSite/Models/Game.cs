@@ -18,6 +18,7 @@ namespace eCommerceSite.Models
         /// price of game
         /// </summary>
         [Range(0, 1000)]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public double Price { get; set; }
     }
 
@@ -28,6 +29,7 @@ namespace eCommerceSite.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public double Price { get; set; }
     }
 }
