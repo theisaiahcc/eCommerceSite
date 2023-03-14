@@ -2,7 +2,7 @@
 Learning CRUD functionality using eCommerceSite
 
 ## Description
-Class project to demostate CRUD funcitonality.
+Class project to demonstrate CRUD funcitonality.
 
 ## Branch naming convention
 name/#1_the-issue
