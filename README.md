@@ -1,5 +1,5 @@
 # eCommerceSite
-Learning CRUD functionality using eCommerceSite
+Learning CRUD functionality by implementing it into a mock eCommerce website
 
 ## Description
 Class project to demonstrate CRUD funcitonality.
