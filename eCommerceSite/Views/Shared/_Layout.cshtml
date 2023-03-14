@@ -42,6 +42,7 @@
                     else
                     {
                         <p class="nav-link text-dark login">Hello, @userEmail.Substring(0, userEmail.IndexOf("@"))</p>
+                        <a class="nav-link text-dark login" asp-controller="Cart" asp-action="Summary">View Cart</a>
                         <a class="nav-link text-dark login" asp-controller="Members" asp-action="Logout">Logout</a>
                     }
                 </div>
@@ -49,7 +50,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="text-light pb-3">
             @RenderBody()
         </main>
     </div>
