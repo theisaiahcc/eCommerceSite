@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/eCommerceSite.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body class="bg-dark text-light">
     <header>
@@ -42,6 +43,7 @@
                     else
                     {
                         <p class="nav-link text-dark login">Hello, @userEmail.Substring(0, userEmail.IndexOf("@"))</p>
+                        <a class="nav-link text-dark login" asp-controller="Cart" asp-action="Summary"><i class="bi bi-cart4"></i> View Cart</a>
                         <a class="nav-link text-dark login" asp-controller="Members" asp-action="Logout">Logout</a>
                     }
                 </div>
@@ -49,7 +51,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="text-light pb-3">
             @RenderBody()
         </main>
     </div>

@@ -19,7 +19,15 @@ namespace eCommerceSite.Models
         /// </summary>
         [Range(0, 1000)]
         public double Price { get; set; }
-        
-        // To-do: Add rating
+    }
+
+    /// <summary>
+    /// A single video game that has been added to the users shopping cart cookie
+    /// </summary>
+    public class CartGameViewModel
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public double Price { get; set; }
     }
 }

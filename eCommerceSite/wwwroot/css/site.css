@@ -15,6 +15,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  color: white;
 }
 
 .btn-close {
@@ -29,4 +30,8 @@ body {
 .login {
     float: right;
     margin-bottom: 0;
+}
+
+.selections {
+    align: right;
 }
