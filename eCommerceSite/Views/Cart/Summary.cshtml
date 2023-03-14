@@ -1,0 +1,45 @@
+﻿@model IEnumerable<eCommerceSite.Models.CartGameViewModel>
+
+@{
+    ViewData["Title"] = "View Shoppping Cart";
+}
+
+<h1>Summary</h1>
+
+@if (Model.Count() == 0)
+{
+    <h2>The cart is empty.</h2>
+}
+else
+{
+    <table class="table text-light">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-action="Remove" asp-route-id="@item.Id">Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

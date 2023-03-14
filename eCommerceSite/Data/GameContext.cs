@@ -17,5 +17,7 @@ namespace eCommerceSite.Data
         public DbSet<eCommerceSite.Models.RegisterViewModel> RegisterViewModel { get; set; }
 
         public DbSet<eCommerceSite.Models.LoginViewModel> LoginViewModel { get; set; }
+
+        public DbSet<eCommerceSite.Models.CartGameViewModel> CartGameViewModel { get; set; }
     }
 }
